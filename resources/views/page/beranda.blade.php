@@ -242,9 +242,9 @@
 
         <!-- ==== section contact ===== -->
          <section class="grid md:grid-cols-2 py-8 md:py-20 gap-10" id="contact">
-              <div class="text-white flex flex-col gap-4 md:gap-28">
+              <div class="text-white flex flex-col gap-4 md:gap-16">
                 <h1>Contact Us</h1>  
-                <h2 class="md:text-5xl text-3xl font-bold">Let’s discuss your project and bring your ideas to life</h2>
+                <h2 class="md:text-5xl text-3xl font-bold mb-0 md:mb-32">Let’s discuss your project and bring your ideas to life</h2>
                 <button class="w-[fit-content] hidden md:flex rounded-tr-3xl rounded-bl-3xl text-end p-2 px-16 bg-gradient-to-r from-[#363089] to-[#1C1762]">Send Message</button>
               </div>
               <div>
@@ -254,7 +254,7 @@
                  <label class="text-white">Email</label>              
                   <input class="bg-transparent border rounded-lg p-4" type="email" placeholder="Your Email"/>
                   <label class="text-white">Message</label>
-                  <textarea class="bg-transparent border" name="" id="" cols="30" rows="10"></textarea>
+                  <textarea class="bg-transparent border" name="" id="" cols="15" rows="10"></textarea>
                   <button type="submit" class="md:hidden block rounded-lg bg-white text-center p-2 px-16">Send Message</button>
                 </form>
               </div>
