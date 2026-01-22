@@ -16,7 +16,7 @@
         @extends('layouts.app') @section('content')
         <!-- ======= Hero Section ========= -->
         <section
-            class="text-whiterelative overflow-hidden min-h-screen flex flex-wrap-reverse md:flex-row justify-center md:items-center md:pt-16 pt-32 gap-8"
+            class="text-whiterelative overflow-hidden lg:min-h-screen lg:pt-10 flex flex-wrap-reverse md:flex-row justify-center md:items-center md:py-[15%] lg:py-0 gap-8"
         >
             <!-- Content -->
             <div class="flex-1 p-2 z-10">
@@ -52,11 +52,11 @@
             </div>
 
             <!-- img yaa ni -->
-            <div class="flex justify-center md:justify-end items-center z-10" id="hero-image">
+            <div class="flex justify-center lg:static md:absolute md:top-[100px] md:right-[50px] md:justify-end items-center md:z-5 lg:z-10" id="hero-image">
                 <img
                     src="{{ asset('images/page/iconhero.png') }}"
                     alt="Hero Image"
-                    class="w-1/2 md:w-1/3 lg:w-[400px] opacity-80"
+                    class="w-1/2 md:w-[300px] lg:w-[400px] opacity-80"
                 />
             </div>
         </section>
@@ -189,7 +189,7 @@
             </div>
 
             <!-- box grid -->
-            <div class="flex gap-8 flex-col lg:flex-nowrap">
+            <div class="flex gap-8 flex-wrap md:flex-col lg:flex-row">
                 <!-- Grid -->
                 <div class="flex-1 gap-8">
                     <div class="flex gap-8 mb-8">
@@ -233,7 +233,7 @@
 
                 <!-- Card (lebih tinggi di desktop) -->
                 <div
-                    class="w-[100%] md:w-[400px] rounded-2xl">
+                    class="w-[100%] lg:w-[400px] rounded-2xl">
                     <img src="{{ asset('images/page/img-project-long.png') }}" class="h-full w-full object-cover bg-center" alt="">
                 </div>
             </div>

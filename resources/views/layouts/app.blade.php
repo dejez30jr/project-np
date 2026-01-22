@@ -18,7 +18,7 @@
 <body class="">
 <!-- ========= navbar/header ========== -->
 <nav>
-    <header id="header" class="w-full mx-auto px-4 md:px-20 py-4 md:py-8 flex items-center justify-between fixed w-full top-0 text-white z-50" >
+    <header id="header" class="w-full mx-auto px-4 md:px-20 py-4 md:py-8 flex items-center sticky lg:fixed justify-between w-full top-0 text-white z-50" >
         <div class="md:bg-[transparent] w-full flex items-center justify-between px-2 py-2 rounded-full">
         <div class="flex items-center space-x-2">
             <div class="">
@@ -104,7 +104,7 @@
 
   <!-- ======== footer ========= -->
 <footer class="bg-gradient-to-br p-4 from-[#2b1f7a] via-[#2a2f8f] to-[#1b1f5f] text-white rounded-2xl mx-4 my-10">
-  <div class="max-w-7xl mx-auto px-6 rounded-lg py-14 border">
+  <div class="w-full px-6 rounded-lg py-14 border">
     
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 
