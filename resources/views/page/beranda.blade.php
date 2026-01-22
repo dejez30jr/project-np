@@ -189,7 +189,7 @@
             </div>
 
             <!-- box grid -->
-            <div class="flex gap-8 flex-wrap md:flex-nowrap">
+            <div class="flex gap-8 flex-col lg:flex-nowrap">
                 <!-- Grid -->
                 <div class="flex-1 gap-8">
                     <div class="flex gap-8 mb-8">
@@ -209,7 +209,7 @@
                     <div class="flex gap-8">
                         <!-- card -->
                         <div
-                            class="md:flex hidden rounded-2xl overflow-hidden items-center backdrop-blur hover:scale-[1.02] transition"
+                            class="lg:flex hidden rounded-2xl overflow-hidden items-center backdrop-blur hover:scale-[1.02] transition"
                         >
                             <img
                                 src="{{ asset('images/page/icon-project2.png') }}"
