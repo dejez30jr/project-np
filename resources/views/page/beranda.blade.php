@@ -62,7 +62,7 @@
         </section>
 
         <!-- ==== section our pricing ===== -->
-        <section class="mt-10 md:mt-4" id="pricing">
+        <section class="mt-10 md:mt-4" id="pricing" data-aos="zoom-in" data-aos-duration="4000">
             <h1 class="text-3xl md:text-5xl text-white font-bold text-center">
                 Simple Pricing for Every Business
             </h1>
@@ -170,7 +170,7 @@
         <!-- ==== secttion service endd === -->
 
         <!-- ==== section service project ==== -->
-        <section class="py-8 md:py-20" id="projects">
+        <section class="py-8 md:py-20" id="projects" data-aos="zoom-in" data-aos-duration="4000">
             <!-- Heading -->
             <div class="mb-14 text-white flex justify-between items-center">
                 <div>
@@ -241,7 +241,7 @@
         <!-- ==== section project end ==== -->
 
         <!-- ==== section contact ===== -->
-         <section class="grid md:grid-cols-2 py-8 md:py-20 gap-10" id="contact">
+         <section class="grid md:grid-cols-2 py-8 md:py-20 gap-10" id="contact" data-aos="zoom-in" data-aos-duration="4000">
               <div class="text-white flex flex-col gap-4 md:gap-16">
                 <h1>Contact Us</h1>  
                 <h2 class="md:text-5xl text-3xl font-bold mb-0 md:mb-32">Let’s discuss your project and bring your ideas to life</h2>
