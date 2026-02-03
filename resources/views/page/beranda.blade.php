@@ -231,10 +231,14 @@
 
                 {{-- Pesan Sukses --}}
                 @if(session('success'))
-                    <div
-                        style="background-color: #d4edda; color: #155724; padding: 10px; margin-bottom: 20px; border-radius: 5px;">
-                        {{ session('success') }}
-                    </div>
+                   <script>
+                    Try me!
+Swal.fire({
+  title: "Pesan berhasil dikirim!",
+  icon: "success",
+  draggable: true
+});
+                   </script>
                 @endif
 
                 {{-- FORM UTAMA --}}
