@@ -62,8 +62,8 @@
             </h1>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-10 md:py-16">
                 <!-- card -->
-                <div class="bg-gradient-to-r from-[#2E287E] to-[#181642] p-2 rounded-lg flex gap-4 items-center">
-                    <div class="border-2 border-white rounded-lg p-4 flex flex-col gap-10 w-full h-full">
+                <div class="bg-gradient-to-r from-[#2E287E] to-[#181642] p-2 rounded-[30px] flex gap-4 items-center">
+                    <div class="border-2 border-white rounded-[30px] p-4 flex flex-col gap-10 w-full h-full">
                         <div class="flex text-white flex-col">
                             <span class="mb-2">UMKM Package</span>
                             <span class="text-3xl font-bold">Rp400,000</span>
@@ -86,8 +86,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-gradient-to-r from-[#2E287E] to-[#181642] p-2 rounded-lg flex gap-4 items-center">
-                    <div class="border-2 border-white rounded-lg p-4 flex flex-col gap-10 w-full h-full">
+                <div class="bg-gradient-to-r from-[#2E287E] to-[#181642] p-2 rounded-[30px] flex gap-4 items-center">
+                    <div class="border-2 border-white rounded-[30px] p-4 flex flex-col gap-10 w-full h-full">
                         <div class="flex text-white flex-col">
                             <span class="mb-2">Standard Package</span>
                             <span class="text-3xl font-bold">Rp500,000-Rp1,500,000</span>
@@ -111,8 +111,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-gradient-to-r from-[#2E287E] to-[#181642] p-2 rounded-lg flex gap-4 items-center">
-                    <div class="border-2 border-white rounded-lg p-4 flex flex-col gap-10 w-full h-full">
+                <div class="bg-gradient-to-r from-[#2E287E] to-[#181642] p-2 rounded-[30px] flex gap-4 items-center">
+                    <div class="border-2 border-white rounded-[30px] p-4 flex flex-col gap-10 w-full h-full">
                         <div class="flex text-white flex-col">
                             <span class="mb-2">Professional Package</span>
                             <span class="text-3xl font-bold">Rp1,500,000-3,700,000</span>
@@ -142,7 +142,7 @@
         <!-- ==== secttion service endd === -->
 
         <!-- ==== section service project ==== -->
-        <section class="py-8 md:py-20" id="projects" data-aos="zoom-in" data-aos-duration="4000">
+        <section class="py-8 md:py-16" id="projects" data-aos="zoom-in" data-aos-duration="4000">
             <!-- Heading -->
             <div class="mb-14 text-white flex justify-between items-center">
                 <div>
@@ -229,21 +229,21 @@
                     </div>
                 @endif
 
-                {{-- Pesan Sukses --}}
+                {{-- aler Sukses --}}
                 @if(session('success'))
                    <script>
-                    Try me!
-Swal.fire({
-  title: "Pesan berhasil dikirim!",
-  icon: "success",
-  draggable: true
-});
+                      Swal.fire({
+                      title: "Pesan berhasil dikirim!",
+                      icon: "success",
+                      draggable: true
+                    });
                    </script>
                 @endif
 
                 {{-- FORM UTAMA --}}
                 <form id="form-kontak" action="{{ route('contact.send') }}" method="POST"
-                    class="flex flex-col gap-4 border-white/30 p-6 rounded-lg bg-gradient-to-r from-[#363089] to-[#1C1762]">
+                    class="flex flex-col gap-4 p-2 rounded-lg bg-gradient-to-r from-[#363089] to-[#1C1762]">
+                    <div class="flex flex-col gap-4 border border-white p-4 rounded-lg">
                     @csrf
 
                     <label class="text-white">Name</label>
@@ -261,6 +261,7 @@ Swal.fire({
                     <button type="submit"
                         class="md:hidden block rounded-lg bg-white text-[#1C1762] font-bold text-center p-2 px-16">Send
                         Message</button>
+                    </div>
                 </form>
             </div>
 

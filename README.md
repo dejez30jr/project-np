@@ -1,3 +1,5 @@
 <h1>frontend nya udh beres, tinggal backend nye lu buat di filament resource portfolio(di field nya ada img, title, sama desc), pesan(user bisa ngirim pesan lewat form di website nye terus pesan nya masuk di dashboard admin filament resource "pesan" atau kalau gamau buat resource di filemant bisa pakai api fonte buat send pesan dari form di web ke wa tanpa harus ngeredirect), opsional bisa make chatbot dan itu doang si di backend nye, kalau ada tambahan bilang aje atau bisa tambahin pesan di bawah ini wkwk</h1> 
 
 <h1>Udah gw upload kalo mau lihat apa aja yang berubah lu bisa check di github dekstop terus ke history tepat dibawah update ini disitu muncul pesan di sebelah kanan atas lu baca dah :D. oh iya tadi gw ngerubah bagian beranda di section contact tolong ubah notif user kirim pesan berhasil lu atur aja dah tampilan nya kek mana dah itu doang. Salam Neuron Activation :V </h1>
+
+<h1>alert notfikasi pesan di section contact dah gua benerin yeee</h1>
