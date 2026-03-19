@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="shortcut icon" href="{{ asset('images/app-layout/navlogo.png') }}" type="image/x-icon"/>
@@ -16,8 +17,71 @@
         font-family: 'Poppins', sans-serif;
         
     }
+
+  /* BUAT ANIMASI OPENING DIKIT DOANG TARO DI INLINE FILE AJA */
+  .loader {
+  position: fixed;
+  inset: 0;
+  background-image: url('{{ asset('images/app-layout/animate-open.png') }}');
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  z-index: 9999;
+}
+
+.logo {
+  width: 80px;
+  animation: pulse 1.5s infinitxe;
+}
+
+.brand-text {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #fff;
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: all 0.6s ease;
+}
+
+.brand-text.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  /* 50% { transform: scale(1.08); }
+  100% { transform: scale(1); } */
+}
 </style>
 <body class="">
+
+<!-- ===== ANIMASI OPENING WEB ===== -->
+ <div 
+  x-data="{ showText: false, showLoader: true }"
+  x-init="
+    setTimeout(() => showText = true, 2000);
+    setTimeout(() => showLoader = false, 4000);
+  "
+  x-show="showLoader"
+  x-transition.opacity.duration.600ms
+  class="loader"
+>
+  <img src="{{ asset('images/app-layout/iconlogo.png') }}" alt="Neuron Production" class="logo">
+  <span 
+    class="brand-text"
+    :class="{ 'active': showText }"
+  >
+    NEURON PRODUCTION
+  </span>
+</div>
+<!-- === END ===== -->
+
 <!-- ========= navbar/header ========== -->
 <nav>
     <header id="header" class="w-full mx-auto px-4 md:px-20 py-4 md:py-8 flex items-center sticky lg:fixed justify-between w-full top-0 text-white z-50" >
