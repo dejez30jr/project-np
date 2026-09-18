@@ -1,0 +1,12 @@
+# ============================================================
+#  FALLBACK .htaccess (hanya jika TIDAK bisa ubah Document Root)
+#  Target deploy: domain ROOT (public_html)
+# ============================================================
+#  Letak: public_html/.htaccess
+#  Efek: semua request dialihkan ke folder public/ (Laravel)
+# ------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
