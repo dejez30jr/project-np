@@ -3,15 +3,13 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PortfolioResource\Pages;
-use App\Filament\Resources\PortfolioResource\RelationManagers;
 use App\Models\Portfolio;
+use App\Support\PortfolioCategories;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PortfolioResource extends Resource
 {
@@ -28,6 +26,12 @@ class PortfolioResource extends Resource
                     ->required()
                     ->maxLength(255),
 
+                Forms\Components\Select::make('category')
+                    ->label('Kategori')
+                    ->options(PortfolioCategories::all())
+                    ->required()
+                    ->default('website'),
+
                 Forms\Components\Textarea::make('desc')
                     ->label('Deskripsi')
                     ->rows(5)
@@ -37,10 +41,9 @@ class PortfolioResource extends Resource
                 Forms\Components\FileUpload::make('img')
                     ->label('Gambar')
                     ->image()
+                    ->imageEditor()
                     ->directory('portfolio-images')
                     ->disk('public')
-                    ->multiple()
-                    ->maxFiles(5)
                     ->maxSize(2048)
                     ->required(),
             ]);
@@ -49,14 +52,30 @@ class PortfolioResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->defaultSort('created_at', 'desc')
             ->columns([
                 Tables\Columns\ImageColumn::make('img')
                     ->label('Gambar')
-                    ->disk('public'),
+                    ->disk('public')
+                    ->height(60),
 
                 Tables\Columns\TextColumn::make('title')
                     ->label('Judul')
                     ->searchable()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('category')
+                    ->label('Kategori')
+                    ->badge()
+                    ->formatStateUsing(fn (string $state): string => PortfolioCategories::label($state))
+                    ->color(fn (string $state): string => match ($state) {
+                        'website' => 'success',
+                        'poster' => 'danger',
+                        'banner' => 'info',
+                        'mockup' => 'warning',
+                        'logo' => 'gray',
+                        default => 'primary',
+                    })
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('desc')
@@ -64,7 +83,9 @@ class PortfolioResource extends Resource
                     ->limit(50),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('category')
+                    ->label('Kategori')
+                    ->options(PortfolioCategories::all()),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

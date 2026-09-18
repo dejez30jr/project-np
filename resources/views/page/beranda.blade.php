@@ -18,7 +18,11 @@
 </style>
 
 <body class="overflow-x-hidden">
-    @extends('layouts.app') @section('content')
+    @extends('layouts.app')
+    @push('head')
+        <link rel="preload" as="image" href="{{ asset('images/page/iconhero.webp') }}" fetchpriority="high" />
+    @endpush
+    @section('content')
         <!-- ======= Hero Section ========= -->
         <section
             class="text-whiterelative overflow-hidden lg:min-h-screen lg:pt-10 flex flex-wrap-reverse md:flex-row justify-center md:items-center md:py-[15%] lg:py-0 gap-8">
@@ -50,13 +54,14 @@
             <!-- img yaa ni -->
             <div class="flex justify-center lg:static md:absolute md:top-[100px] md:right-[50px] md:justify-end items-center md:z-5 lg:z-10"
                 id="hero-image">
-                <img src="{{ asset('images/page/iconhero.png') }}" alt="Hero Image"
-                    class="w-1/2 md:w-[300px] lg:w-[400px] opacity-80" />
+                <img src="{{ asset('images/page/iconhero.webp') }}" alt="Hero Image" width="524" height="733"
+                fetchpriority="high" decoding="async"
+                class="w-1/2 md:w-[300px] lg:w-[400px] opacity-80 aspect-[524/733]" />
             </div>
         </section>
 
         <!-- ==== section our pricing ===== -->
-        <section class="mt-10 md:mt-4" id="pricing" data-aos="zoom-in" data-aos-duration="4000">
+        <section class="relative mt-10 md:mt-4 [content-visibility:auto] [contain-intrinsic-size:auto_900px]" id="pricing" data-aos="zoom-in">
             <h1 class="text-3xl md:text-5xl text-white font-bold text-center">
                 Simple Pricing for Every Business
             </h1>
@@ -115,7 +120,7 @@
                     <div class="border-2 border-white rounded-[30px] p-4 flex flex-col gap-10 w-full h-full">
                         <div class="flex text-white flex-col">
                             <span class="mb-2">Professional Package</span>
-                            <span class="text-3xl font-bold">Rp1,500,000-3,700,000</span>
+                            <span class="text-3xl font-bold">Rp1,500,000-7,700,000</span>
                         </div>
 
                         <ul class="text-sm text-white mt-2 list-disc pl-5 space-y-1">
@@ -142,7 +147,7 @@
         <!-- ==== secttion service endd === -->
 
         <!-- ==== section service project ==== -->
-        <section class="py-8 md:py-16" id="projects" data-aos="zoom-in" data-aos-duration="4000">
+        <section class="py-8 md:py-16 [content-visibility:auto] [contain-intrinsic-size:auto_1200px]" id="projects" data-aos="zoom-in">
             <!-- Heading -->
             <div class="mb-14 text-white flex justify-between items-center">
                 <div>
@@ -153,61 +158,122 @@
                     </h2>
                 </div>
                 <div>
-                    <img src="{{ asset('images/page/icon-project1.png') }}" alt="" />
+                    <img src="{{ asset('images/page/icon-project1.webp') }}" alt="" width="279" height="272" decoding="async" />
                 </div>
             </div>
 
-            <!-- box grid -->
+            {{-- box grid (layout asli, gambar dinamis: website 1, poster 2, banner 1) --}}
+            @php
+                $websiteCard = $ports->firstWhere('category', 'website');
+                $posterCards = $ports->where('category', 'poster')->take(2)->values();
+                $bannerCard = $ports->firstWhere('category', 'banner');
+            @endphp
+
             <div class="flex gap-8 flex-wrap md:flex-col lg:flex-row">
                 <!-- Grid -->
                 <div class="flex-1 gap-8">
                     <div class="flex gap-8 mb-8">
-                        <!-- Card -->
-                        <div
-                            class="flex-1 rounded-2xl overflow-hidden bg-white/5 backdrop-blur hover:scale-[1.02] transition">
-                            <img src="{{ asset('images/page/img-project-3.png') }}" alt=""
-                                class="h-full w-full object-cover">
-                        </div>
+                        <!-- Card website (lebar) -->
+                        @if (isset($posterCards[1]))
+                            <a href="{{ route('portfolio.show', $posterCards[1]) }}"
+                                class="relative flex-1 rounded-2xl overflow-hidden bg-white/5 backdrop-blur hover:scale-[1.02] transition group">
+                                <img src="{{ asset('storage/' . $posterCards[1]->img) }}" alt="{{ $posterCards[1]->title }}"
+                                    class="h-full w-full object-cover" loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-5">
+                                    <span
+                                        class="inline-block w-fit text-xs font-semibold rounded-full px-3 py-1 mb-2 bg-purple-600/90 text-white">Website</span>
+                                    <h3 class="text-white font-semibold">{{ $websiteCard->title }}</h3>
+                                </div>
+                            </a>
+                        @else
+                            <div
+                                class="flex-1 rounded-2xl overflow-hidden bg-white/5 backdrop-blur flex items-center justify-center min-h-[220px]">
+                                <span class="text-white/40 text-sm">Belum ada proyek Website</span>
+                            </div>
+                        @endif
 
-                        <!-- Card -->
-                        <div
-                            class="md:w-[100px] flex-1 rounded-2xl overflow-hidden bg-white/5 backdrop-blur hover:scale-[1.02] transition">
-                            <img src="{{ asset('images/page/img-project-2.png') }}" class="h-full w-full object-cover"
-                                alt="">
-                        </div>
+                        <!-- Card poster/flyer 1 (kecil) -->
+                        @if (isset($posterCards[0]))
+                            <a href="{{ route('portfolio.show', $posterCards[0]) }}"
+                                class="relative md:w-[100px] flex-1 rounded-2xl overflow-hidden bg-white/5 backdrop-blur hover:scale-[1.02] transition group">
+                                <img src="{{ asset('storage/' . $posterCards[0]->img) }}"
+                                    alt="{{ $posterCards[0]->title }}" class="h-full w-full object-cover"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-4">
+                                    <span
+                                        class="inline-block w-fit text-xs font-semibold rounded-full px-3 py-1 mb-2 bg-purple-600/90 text-white">Poster/Flyer</span>
+                                    <h3 class="text-white font-semibold text-sm">{{ $posterCards[0]->title }}</h3>
+                                </div>
+                            </a>
+                        @else
+                            <div
+                                class="md:w-[100px] flex-1 rounded-2xl overflow-hidden bg-white/5 backdrop-blur flex items-center justify-center min-h-[220px]">
+                                <span class="text-white/40 text-sm">Poster/Flyer</span>
+                            </div>
+                        @endif
                     </div>
 
                     <div class="flex gap-8">
-                        <!-- card -->
+                        <!-- card decor -->
                         <div
                             class="lg:flex hidden rounded-2xl overflow-hidden items-center backdrop-blur hover:scale-[1.02] transition">
-                            <img src="{{ asset('images/page/icon-project2.png') }}" alt=""
+                            <img src="{{ asset('images/page/icon-project2.webp') }}" alt=""
                                 class="w-full h-[200px] object-cover" />
                         </div>
-                        <!-- Card -->
-                        <div class="flex-1 rounded-2xl overflow-hidden bg-white/5 backdrop-blur hover:scale-[1.02] transition"
-                            style="background-image: url('{{ asset('images/page/img-project-3.png') }}'); background-size: cover; background-position: center;">
-                            <img src="https://source.unsplash.com/600x400/?portrait,ui" alt=""
-                                class="w-full h-52 object-cover" />
-                        </div>
+
+                        <!-- Card banner -->
+                        @if ($bannerCard)
+                            <a href="{{ route('portfolio.show', $bannerCard) }}"
+                                class="relative flex-1 rounded-2xl overflow-hidden bg-white/5 backdrop-blur hover:scale-[1.02] transition group">
+                                <img src="{{ asset('storage/' . $bannerCard->img) }}" alt="{{ $bannerCard->title }}"
+                                    class="w-full h-52 object-cover" loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-5">
+                                    <span
+                                        class="inline-block w-fit text-xs font-semibold rounded-full px-3 py-1 mb-2 bg-purple-600/90 text-white">Banner</span>
+                                    <h3 class="text-white font-semibold">{{ $bannerCard->title }}</h3>
+                                </div>
+                            </a>
+                        @else
+                            <div
+                                class="flex-1 rounded-2xl overflow-hidden bg-white/5 backdrop-blur flex items-center justify-center min-h-[180px]">
+                                <span class="text-white/40 text-sm">Belum ada proyek Banner</span>
+                            </div>
+                        @endif
                     </div>
                 </div>
 
-                <!-- Card (lebih tinggi di desktop) -->
-                <div class="w-[100%] lg:w-[400px] rounded-2xl">
-                    <img src="{{ asset('images/page/img-project-long.png') }}" class="h-full w-full object-cover bg-center"
-                        alt="">
-                </div>
+                <!-- Card poster/flyer 2 (tinggi di desktop) -->
+                @if ($websiteCard)
+                    <a href="{{ route('portfolio.show', $websiteCard) }}"
+                        class="relative w-[100%] lg:w-[400px] rounded-2xl overflow-hidden bg-white/5 backdrop-blur hover:scale-[1.02] transition group">
+                        <img src="{{ asset('storage/' . $websiteCard->img) }}" alt="{{ $websiteCard->title }}"
+                            class="h-full w-full object-cover bg-center" loading="lazy" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-5">
+                            <span
+                                class="inline-block w-fit text-xs font-semibold rounded-full px-3 py-1 mb-2 bg-purple-600/90 text-white">Poster/Flyer</span>
+                            <h3 class="text-white font-semibold">{{ $websiteCard->title }}</h3>
+                        </div>
+                    </a>
+                @else
+                    <div
+                        class="w-[100%] lg:w-[400px] rounded-2xl overflow-hidden bg-white/5 backdrop-blur flex items-center justify-center min-h-[250px]">
+                        <span class="text-white/40 text-sm">Belum ada proyek Poster/Flyer</span>
+                    </div>
+                @endif
             </div>
         </section>
         <!-- ==== section project end ==== -->
 
         <!-- ==== section contact ===== -->
 
-        <section class="grid md:grid-cols-2 py-8 md:py-20 gap-10" id="contact" data-aos="zoom-in" data-aos-duration="4000">
-            <div class="text-white flex flex-col gap-4 md:gap-16">
+        <section class="grid md:grid-cols-2 py-8 md:py-20 gap-10 [content-visibility:auto] [contain-intrinsic-size:auto_1000px]" id="contact" data-aos="zoom-in">
+            <div class="text-white flex flex-col gap-4 md:gap-8">
                 <h1>Contact Us</h1>
-                <h2 class="md:text-5xl text-3xl font-bold mb-0 md:mb-32">Let’s discuss your project and bring your ideas to
+                <h2 class="md:text-5xl text-3xl font-bold mb-0 md:mb-15">Let’s discuss your project and bring your ideas to
                     life</h2>
                 <button type="submit" form="form-kontak"
                     class="w-[fit-content] hidden md:flex rounded-tr-3xl rounded-bl-3xl text-end p-2 px-16 bg-gradient-to-r from-[#363089] to-[#1C1762] hover:brightness-110 transition cursor-pointer">
@@ -232,11 +298,27 @@
                 {{-- aler Sukses --}}
                 @if(session('success'))
                    <script>
-                      Swal.fire({
-                      title: "Pesan berhasil dikirim!",
-                      icon: "success",
-                      draggable: true
-                    });
+                     document.addEventListener('DOMContentLoaded', () => {
+                       Swal.fire({
+                         title: "Pesan berhasil dikirim!",
+                         icon: "success",
+                         draggable: true
+                       });
+                     });
+                   </script>
+                @endif
+
+                {{-- Alert Gagal / Rate Limit --}}
+                @if(session('error'))
+                   <script>
+                     document.addEventListener('DOMContentLoaded', () => {
+                       Swal.fire({
+                         title: "Pengiriman dibatasi!",
+                         text: @json(session('error')),
+                         icon: "warning",
+                         draggable: true
+                       });
+                     });
                    </script>
                 @endif
 
@@ -246,19 +328,33 @@
                     <div class="flex flex-col gap-4 border border-white p-4 rounded-lg">
                     @csrf
 
+                    {{-- Honeypot: field tersembunyi anti-bot --}}
+                    <div class="hidden" aria-hidden="true">
+                        <input type="text" name="website" value="" tabindex="-1" autocomplete="off" />
+                    </div>
+
                     <label class="text-white">Name</label>
                     <input class="bg-transparent border rounded-lg p-4 text-white placeholder-gray-300" type="text"
-                        name="name" required placeholder="Your Name" value="{{ old('name') }}" />
+                        name="name" required maxlength="100" placeholder="Your Name" value="{{ old('name') }}" />
 
                     <label class="text-white">Email</label>
                     <input class="bg-transparent border rounded-lg p-4 text-white placeholder-gray-300" type="email"
-                        name="email" required placeholder="Your Email" value="{{ old('email') }}" />
+                        name="email" required maxlength="150" placeholder="Your Email" value="{{ old('email') }}" />
 
                     <label class="text-white">Message</label>
                     <textarea class="bg-transparent border text-white p-4 placeholder-gray-300" name="message" required
-                        cols="15" rows="10">{{ old('message') }}</textarea>
+                        maxlength="2000" cols="15" rows="10">{{ old('message') }}</textarea>
 
-                    <button type="submit"
+                    {{-- CAPTCHA (pertanyaan matematika) --}}
+                    <label class="text-white">
+                        Verifikasi: <span class="font-bold tracking-wider">{{ $captchaQuestion }}</span>
+                    </label>
+                    <input class="bg-transparent border rounded-lg p-4 text-white placeholder-gray-300" type="text"
+                        name="captcha" required inputmode="numeric" autocomplete="off" maxlength="6"
+                        placeholder="Masukkan jawaban" />
+                    <input type="hidden" name="captcha_token" value="{{ $captchaToken }}" />
+
+                    <button type="submit" id="btn-kirim"
                         class="md:hidden block rounded-lg bg-white text-[#1C1762] font-bold text-center p-2 px-16">Send
                         Message</button>
                     </div>
@@ -267,5 +363,55 @@
 
         </section>
         <!-- ==== section contact end ==== -->
+
+        <script>
+            const formKontak = document.getElementById('form-kontak');
+            let isSending = false;
+            let lastSentAt = 0;
+
+            if (formKontak) {
+                // 1. Sanitasi client-side: buang tag HTML agar tidak bisa injeksi <script> dsb.
+                formKontak.querySelectorAll('input[name], textarea[name]').forEach((el) => {
+                    el.addEventListener('input', () => {
+                        el.value = el.value.replace(/<[^>]*>/g, '');
+                    });
+                });
+
+                // 2. Batasi submit (client-side) + cegah double submit
+                formKontak.addEventListener('submit', function (e) {
+                    if (isSending) {
+                        e.preventDefault();
+                        return;
+                    }
+
+                    // Cooldown 30 detik antar kirim
+                    if (Date.now() - lastSentAt < 30000) {
+                        e.preventDefault();
+                        Swal.fire({
+                            title: 'Terlalu cepat!',
+                            text: 'Tunggu 30 detik sebelum mengirim pesan lagi.',
+                            icon: 'warning',
+                            draggable: true
+                        });
+                        return;
+                    }
+
+                    const btns = Array.from(
+                        document.querySelectorAll('#form-kontak button[type="submit"], button[form="form-kontak"]')
+                    );
+
+                    isSending = true;
+                    lastSentAt = Date.now();
+
+                    btns.forEach((btn) => {
+                        btn.disabled = true;
+                        btn.textContent = 'Mengirim...';
+                    });
+
+                    // Kirim form secara manual (hindari loop event)
+                    formKontak.submit();
+                });
+            }
+        </script>
     @endsection
 </body>

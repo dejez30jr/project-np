@@ -4,12 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Neuron Production | Digital Creative Agency</title>
+  <meta name="description" content="Neuron Production — jasa desain poster, banner, dan pembuatan website profesional.">
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/aos.css') }}" />
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="shortcut icon" href="{{ asset('images/app-layout/navlogo.png') }}" type="image/x-icon"/>
+  <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="shortcut icon" href="{{ asset('images/app-layout/navlogo-64.png') }}" type="image/png"/>
+  @stack('head')
 </head>
 <style>
     body {
@@ -22,11 +26,9 @@
   .loader {
   position: fixed;
   inset: 0;
-  background-image: url('{{ asset('images/app-layout/animate-open.png') }}');
-  object-fit: cover;
-  background-size: cover;
-  background-position: center;
+  background: radial-gradient(circle at center, #17134d 0%, #0C0C28 70%);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 14px;
@@ -35,7 +37,7 @@
 
 .logo {
   width: 80px;
-  animation: pulse 1.5s infinitxe;
+  animation: pulse 1.5s infinite;
 }
 
 .brand-text {
@@ -44,13 +46,13 @@
   letter-spacing: 2px;
   color: #fff;
   opacity: 0;
-  transform: translateX(-12px);
+  transform: translateY(12px);
   transition: all 0.6s ease;
 }
 
 .brand-text.active {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 @keyframes pulse {
@@ -61,12 +63,23 @@
 </style>
 <body class="">
 
-<!-- ===== ANIMASI OPENING WEB ===== -->
+<!-- ===== ANIMASI OPENING WEB (hanya sekali per kunjungan, tidak di refresh/pindah halaman) ===== -->
  <div 
-  x-data="{ showText: false, showLoader: true }"
+  x-data="{
+    showText: false,
+    showLoader: (() => {
+      try {
+        if (sessionStorage.getItem('np_has_loaded') === '1') return false;
+        sessionStorage.setItem('np_has_loaded', '1');
+        return true;
+      } catch (e) { return true; }
+    })()
+  }"
   x-init="
-    setTimeout(() => showText = true, 2000);
-    setTimeout(() => showLoader = false, 4000);
+    if (showLoader) {
+      setTimeout(() => showText = true, 700);
+      setTimeout(() => showLoader = false, 1600);
+    }
   "
   x-show="showLoader"
   x-transition.opacity.duration.600ms
@@ -84,11 +97,11 @@
 
 <!-- ========= navbar/header ========== -->
 <nav>
-    <header id="header" class="w-full mx-auto px-4 md:px-20 py-4 md:py-8 flex items-center sticky lg:fixed justify-between w-full top-0 text-white z-50" >
+    <header id="header" class="w-full mx-auto px-4 md:px-[55px] py-2 md:py-4  flex items-center sticky lg:fixed justify-between w-full top-0 text-white z-50" >
         <div class="md:bg-[transparent] w-full flex items-center justify-between px-2 py-2 rounded-full">
         <div class="flex items-center space-x-2">
             <div class="">
-                <img src="{{ asset('images/app-layout/iconlogo.png') }}" alt="Neuron production" class="h-[50px] md:h-[60px]">
+                <img src="{{ asset('images/app-layout/iconlogo.png') }}" alt="Neuron production" class="p-1 h-[45px] md:h-[50px] md:h-[60px]">
             </div>
         </div>
         <!-- Hamburger button for mobile -->
@@ -169,7 +182,7 @@
   <!-- ======= end ======= -->
 
   <!-- ======== footer ========= -->
-<footer class="bg-gradient-to-br p-4 from-[#2b1f7a] via-[#2a2f8f] to-[#1b1f5f] text-white rounded-2xl mx-4 my-10">
+<footer class="bg-gradient-to-br p-4 from-[#2b1f7a] via-[#2a2f8f] to-[#1b1f5f] text-white rounded-2xl mx-4 my-10 [content-visibility:auto] [contain-intrinsic-size:auto_400px]">
   <div class="w-full px-6 rounded-lg py-14 border">
     
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -185,10 +198,10 @@
         </p>
 
         <div class="flex items-center gap-2 text-gray-200">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M16 8a6 6 0 01-12 0 6 6 0 0112 0zM12 14v7m-4-3h8" />
-          </svg>
+          </svg> -->
           <span>@neuronproduction_</span>
         </div>
       </div>
@@ -226,7 +239,7 @@
   <script src="{{ asset('layouts-js/app.js') }}"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({ once: true, duration: 600, offset: 60 });
   </script>
 </body>
 

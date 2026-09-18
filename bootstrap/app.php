@@ -3,6 +3,8 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\ThrottleRequestsException;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -14,5 +16,9 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        //
+        $exceptions->render(function (ThrottleRequestsException $e, Request $request) {
+            if ($request->is('kirim-pesan')) {
+                return redirect()->back()->with('error', 'Terlalu banyak pengiriman pesan. Silakan coba lagi beberapa saat lagi.');
+            }
+        });
     })->create();

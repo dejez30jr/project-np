@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\beranda;
-use Illuminate\Http\Request;
+use App\Models\Portfolio;
+use App\Support\MathCaptcha;
+use App\Support\PortfolioCategories;
 
 class BerandaController extends Controller
 {
@@ -12,54 +13,38 @@ class BerandaController extends Controller
      */
     public function index()
     {
-        return view('page.beranda');
+        $captcha = MathCaptcha::generate();
+
+        return view('page.beranda', [
+            'ports' => Portfolio::latest()->get(),
+            'captchaToken' => $captcha['token'],
+            'captchaQuestion' => $captcha['question'],
+        ]);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Halaman detail portfolio + filter kategori (server-side, paginated).
      */
-    public function create()
+    public function show(Portfolio $portfolio)
     {
-        //
-    }
+        $categories = PortfolioCategories::all();
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $kategori = request()->query('kategori', 'all');
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(beranda $beranda)
-    {
-        //
-    }
+        if ($kategori !== 'all' && isset($categories[$kategori])) {
+            $query = Portfolio::where('category', $kategori);
+        } else {
+            $kategori = 'all';
+            $query = Portfolio::query();
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(beranda $beranda)
-    {
-        //
-    }
+        $items = $query->latest()->paginate(6)->withQueryString();
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, beranda $beranda)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(beranda $beranda)
-    {
-        //
+        return view('page.portfolio-detail', [
+            'portfolio' => $portfolio,
+            'items' => $items,
+            'categories' => $categories,
+            'kategori' => $kategori,
+        ]);
     }
 }
