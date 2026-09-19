@@ -135,7 +135,7 @@
     <div aria-hidden="true" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden" id="mobile-menu">
     </div>
     <nav aria-label="Mobile Navigation"
-        class="fixed top-0 left-0 bottom-0 w-64 bg-white z-50 transform -translate-x-full transition-transform duration-300 ease-in-out"
+        class="fixed top-0 left-0 bottom-0 w-64 bg-white/30 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out"
         id="mobile-nav">
         <div class="flex items-center justify-between px-6 py-6 border-b border-gray-200">
             <div class="flex items-center space-x-2">
@@ -151,7 +151,7 @@
                 </svg>
             </button>
         </div>
-        <ul class="px-6 py-4 space-y-4 text-base font-normal">
+        <ul class="px-6 text-white py-4 space-y-4 text-base font-normal">
             <li>
                 <a class="block hover:underline" href="/#">
                     Home
