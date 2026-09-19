@@ -9,7 +9,7 @@
         }
     </style>
 
-    <section class="min-h-[70vh] py-10 lg:mt-10 md:py-20" data-aos="zoom-in">
+    <section class="min-h-[70vh] py-6 lg:mt-10 md:py-20" data-aos="zoom-in">
 
         {{-- Tombol kembali --}}
         <a href="/#projects"
