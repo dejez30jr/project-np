@@ -224,7 +224,7 @@
     @endif
 
     <footer>
-        <span>Dibuat otomatis oleh sistem NP Studio</span>
+        <span>Dibuat otomatis oleh sistem neuron production</span>
         <span>Tanggal cetak: {{ now()->format('d M Y H:i') }}</span>
     </footer>
 </body>

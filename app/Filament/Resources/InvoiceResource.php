@@ -200,7 +200,9 @@ class InvoiceResource extends Resource
                     ->color('success')
                     ->action(function (Invoice $record) {
                         return response()->streamDownload(
-                            fn () => \Barryvdh\DomPDF\Facade\Pdf::loadView('pdf.invoice', ['invoice' => $record->load('client')])->output(),
+                            function () use ($record) {
+                                echo \Barryvdh\DomPDF\Facade\Pdf::loadView('pdf.invoice', ['invoice' => $record->load('client')])->output();
+                            },
                             'invoice-'.($record->invoice_number ?? $record->id).'.pdf',
                             ['Content-Type' => 'application/pdf'],
                         );
