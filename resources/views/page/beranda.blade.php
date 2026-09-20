@@ -169,10 +169,10 @@
                 $bannerCard = $ports->firstWhere('category', 'banner');
             @endphp
 
-            <div class="flex gap-8 flex-wrap md:flex-col lg:flex-row">
+            <div class="flex md:gap-6 gap-8 flex-wrap md:flex-col lg:flex-row">
                 <!-- Grid -->
                 <div class="flex-1 gap-8">
-                    <div class="flex gap-8 mb-8">
+                    <div class="flex md:gap-6 gap-8 mb-8">
                         <!-- Card website (lebar) -->
                         @if (isset($posterCards[1]))
                             <a href="{{ route('portfolio.show', $posterCards[1]) }}"
@@ -215,7 +215,7 @@
                         @endif
                     </div>
 
-                    <div class="flex gap-8">
+                    <div class="flex md:gap-6 gap-8">
                         <!-- card decor -->
                         <div
                             class="lg:flex hidden rounded-2xl overflow-hidden items-center backdrop-blur hover:scale-[1.02] transition">
