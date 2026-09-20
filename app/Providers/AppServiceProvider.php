@@ -26,5 +26,10 @@ class AppServiceProvider extends ServiceProvider
         RateLimiter::for('contact', function ($job) {
             return Limit::perMinute(3)->by($job->ip());
         });
+
+        // Rate limiter untuk form registrasi client: maksimal 5 submit per jam per IP
+        RateLimiter::for('client', function ($job) {
+            return Limit::perHour(5)->by($job->ip());
+        });
     }
 }

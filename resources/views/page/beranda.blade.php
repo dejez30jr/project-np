@@ -1,4 +1,4 @@
-<!-- inline css -->
+﻿<!-- inline css -->
 <style>
     #hero-image {
         animation: float 3s ease-in-out infinite;
@@ -40,11 +40,11 @@
                 </p>
 
                 <div class="flex flex-wrap gap-4 mt-8">
-                    <a href="#"
+                    <a href="#form-kontak"
                         class="bg-purple-700 text-white px-6 py-3 rounded-tr-[20px] rounded-bl-[20px] shadow hover:bg-purple-800 transition">
                         Let’s Build Your Website
                     </a>
-                    <a href="#"
+                    <a href="#projects"
                         class="border border-purple-700 text-purple-700 px-6 py-3 rounded-tr-[20px] rounded-bl-[20px] hover:bg-purple-700 hover:text-white transition">
                         View Our Works
                     </a>
@@ -52,7 +52,7 @@
             </div>
 
             <!-- img yaa ni -->
-            <div class="flex justify-center lg:static md:absolute md:top-[100px] md:right-[50px] md:justify-end items-center md:z-5 lg:z-10"
+            <div class="flex mt-8 justify-center lg:static md:absolute md:top-[100px] md:right-[50px] md:justify-end items-center md:z-5 lg:z-10"
                 id="hero-image">
                 <img src="{{ asset('images/page/iconhero.webp') }}" alt="Hero Image" width="524" height="733"
                 fetchpriority="high" decoding="async"
@@ -182,7 +182,7 @@
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-5">
                                     <span
-                                        class="inline-block w-fit text-xs font-semibold rounded-full px-3 py-1 mb-2 bg-purple-600/90 text-white">Website</span>
+                                        class="inline-block w-fit text-xs font-semibold rounded-full px-3 py-1 mb-2 bg-purple-600/90 text-white">Poster/flayer</span>
                                     <h3 class="text-white font-semibold">{{ $websiteCard->title }}</h3>
                                 </div>
                             </a>
@@ -254,7 +254,7 @@
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-5">
                             <span
-                                class="inline-block w-fit text-xs font-semibold rounded-full px-3 py-1 mb-2 bg-purple-600/90 text-white">Poster/Flyer</span>
+                                class="inline-block w-fit text-xs font-semibold rounded-full px-3 py-1 mb-2 bg-purple-600/90 text-white">website</span>
                             <h3 class="text-white font-semibold">{{ $websiteCard->title }}</h3>
                         </div>
                     </a>

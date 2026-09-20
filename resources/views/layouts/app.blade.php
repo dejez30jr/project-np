@@ -135,14 +135,14 @@
     <div aria-hidden="true" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden" id="mobile-menu">
     </div>
     <nav aria-label="Mobile Navigation"
-        class="fixed top-0 left-0 bottom-0 w-64 bg-white/30 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out"
+        class="fixed top-0 left-0 bottom-0 w-64 backdrop-blur-md z-50 transform -translate-x-full transition-transform duration-300 ease-in-out"
         id="mobile-nav">
         <div class="flex items-center justify-between px-6 py-6 border-b border-gray-200">
-            <div class="flex items-center space-x-2">
+            <div class="text-white flex items-center space-x-2">
                 <span class="font-semibold text-xl select-none">
                     Menu
             </div>
-            <button aria-label="Close menu" class="text-gray-700 hover:text-black focus:outline-none"
+            <button aria-label="Close menu" class="text-white hover:text-black focus:outline-none"
                 id="mobile-menu-close">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">

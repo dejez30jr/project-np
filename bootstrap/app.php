@@ -20,5 +20,9 @@ return Application::configure(basePath: dirname(__DIR__))
             if ($request->is('kirim-pesan')) {
                 return redirect()->back()->with('error', 'Terlalu banyak pengiriman pesan. Silakan coba lagi beberapa saat lagi.');
             }
+
+            if ($request->is('client/register')) {
+                return redirect()->back()->with('error', 'Terlalu banyak pendaftaran. Silakan coba lagi beberapa saat lagi.');
+            }
         });
     })->create();
