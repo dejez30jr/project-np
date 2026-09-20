@@ -18,8 +18,6 @@ class Client extends Model
         'project_name',
         'project_description',
         'status',
-        'agreement_accepted',
-        'agreement_accepted_at',
     ];
 
     protected $casts = [

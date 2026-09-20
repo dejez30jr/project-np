@@ -28,14 +28,28 @@ class ClientRegisterController extends Controller
         // 2. Validasi data
         $request->validate([
             'name' => 'required|string|max:100|regex:/^[\pL\s\.\'-]+$/u',
-            'nik' => 'required|digits:16',
-            'whatsapp' => 'required|string|max:20',
+            'nik' => 'required|digits:16|unique:clients,nik',
+            'whatsapp' => [
+                'required',
+                'string',
+                'max:25',
+                function ($attribute, $value, $fail) {
+                    $digits = preg_replace('/\D/', '', (string) $value);
+                    if (strlen($digits) < 10 || strlen($digits) > 16) {
+                        $fail('Nomor WhatsApp harus berisi 10–16 digit angka.');
+                    }
+                    if (preg_match('/[^0-9+\s()\-.]/', $value)) {
+                        $fail('Nomor WhatsApp hanya boleh berisi angka dan simbol + ( ) - . spasi.');
+                    }
+                },
+            ],
             'address' => 'required|string|max:500',
             'project_name' => 'required|string|max:150',
             'project_description' => 'required|string|max:2000',
             'agreement_accepted' => 'required|accepted',
         ], [
             'nik.digits' => 'NIK harus terdiri dari 16 digit angka.',
+            'nik.unique' => 'NIK sudah terdaftar. Jika ini data Anda, hubungi tim kami.',
             'agreement_accepted.required' => 'Anda harus menyetujui persyaratan kerja sama terlebih dahulu.',
             'agreement_accepted.accepted' => 'Anda harus menyetujui persyaratan kerja sama terlebih dahulu.',
         ]);
@@ -62,11 +76,16 @@ class ClientRegisterController extends Controller
         }
 
         // 4. Simpan ke Database
-        Client::create(array_merge($validated, [
+        // - status & kolom keputusan (agreement) SELALU ditentukan server,
+        //   tidak boleh ikut dikirim client (lihat fillable Client).
+        $client = Client::create(array_merge($validated, [
             'status' => 'new',
+        ]));
+
+        $client->forceFill([
             'agreement_accepted' => true,
             'agreement_accepted_at' => now(),
-        ]));
+        ])->save();
 
         return redirect()
             ->route('client.register')
