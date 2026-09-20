@@ -51,7 +51,7 @@ class InvoicesRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('deadline')
                     ->label('Deadline')
                     ->date('d M Y')
-                    ->placeholder('—'),
+                    ->placeholder('â€”'),
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make()
@@ -69,7 +69,7 @@ class InvoicesRelationManager extends RelationManager
                     ->color('success')
                     ->action(function (App\Models\Invoice $record) {
                         return response()->streamDownload(
-                            fn () => \Barryvdh\DomPDF\Facade\Pdf::loadView('pdf.invoice', ['invoice' => $record->load('client')])->stream(),
+                            fn () => \Barryvdh\DomPDF\Facade\Pdf::loadView('pdf.invoice', ['invoice' => $record->load('client')])->output(),
                             'invoice-'.($record->invoice_number ?? $record->id).'.pdf',
                             ['Content-Type' => 'application/pdf'],
                         );
