@@ -101,7 +101,7 @@
                 <div class="md:sticky md:top-36 lg:col-span-6 flex flex-col items-start pr-0 lg:pr-6">
                     <!-- Main Bold Headline -->
                     <h1
-                        class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6" id="why-choose-us-heading">
+                        class="text-3xl md:text-5xl font-bold text-white leading-tight mb-4" id="why-choose-us-heading">
                         Why Choose Us?
                     </h1>
                     <!-- Divider line -->
