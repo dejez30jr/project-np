@@ -15,6 +15,40 @@
             transform: translateY(-20px);
         }
     }
+
+    .gradient-purple-text {
+        background: linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #9333ea 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .glow-dot {
+        box-shadow: 0 0 10px #a855f7, 0 0 18px #9333ea;
+    }
+
+    .service-card {
+        background: linear-gradient(180deg, rgba(16, 20, 36, 0.7) 0%, rgba(9, 12, 23, 0.85) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .service-card:hover {
+        border-color: rgba(168, 85, 247, 0.35);
+        box-shadow: 0 10px 30px -10px rgba(147, 51, 234, 0.15);
+        transform: translateY(-2px);
+    }
+
+    .pill-tag {
+        background: rgba(147, 51, 234, 0.1);
+        border: 1px solid rgba(168, 85, 247, 0.22);
+        transition: all 0.2s ease;
+    }
+
+    .pill-tag:hover {
+        background: rgba(147, 51, 234, 0.2);
+        border-color: rgba(168, 85, 247, 0.45);
+    }
 </style>
 
 <body class="overflow-x-hidden">
@@ -27,7 +61,7 @@
         <section
             class="text-whiterelative overflow-hidden lg:min-h-screen lg:pt-10 flex flex-wrap-reverse md:flex-row justify-center md:items-center md:py-[15%] lg:py-0 gap-8">
             <!-- Content -->
-            <div class="flex-1 p-2 z-10">
+            <div class="flex-1 z-10">
                 <h1 class="text-4xl md:text-6xl font-bold text-white leading-snug">
                     Transforming ideas into impactful
                     <span class="">digital experiences.</span>
@@ -60,8 +94,297 @@
             </div>
         </section>
 
+        <!-- ====== section why choose us ====== -->
+        <section aria-labelledby="why-choose-us-heading" class="mt-20 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16 items-start">
+                <!-- Left Column: Title, Narrative & Statistics -->
+                <div class="sticky top-36 lg:col-span-6 flex flex-col items-start pr-0 lg:pr-6">
+                    <!-- Main Bold Headline -->
+                    <h1
+                        class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6" id="why-choose-us-heading">
+                        Engineered for<br />digital<br />
+                        <span>supremacy.</span>
+                    </h1>
+                    <!-- Descriptive Subtitle -->
+                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-lg mb-6 md:mb-12">
+                        Combining strategic design, high-speed engineering, and tailored visual narratives that empower
+                        brand growth without cookie-cutter limitations.
+                    </p>
+                    <!-- Divider line -->
+                    <div class="w-full border-t border-slate-800/80 md:flex hidden mb-4 md:mb-10"></div>
+                </div>
+                <!-- Right Column: Numbered Value Propositions -->
+                <div class="lg:col-span-6 sticky top-50 flex flex-col divide-y bg-gradient-to-r from-[#2E287E] to-[#181642] rounded-2xl border border-white">
+                    <!-- Item 01 -->
+                    <article class="sticky top-10 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] pb-8 first:rounded-t-2xl pt-8 group transition duration-200">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-baseline gap-2.5">
+                                <h3 class="text-lg font-bold text-white tracking-tight group-hover:text-purple-300 transition-colors">
+                                    Creative &amp; Tailored UI/UX
+                                </h3>
+                            </div>
+                            <div
+                                class="shrink-0 w-9 h-9 rounded-full bg-purple-950/60 border border-purple-700/30 flex items-center justify-center text-purple-300 group-hover:border-purple-500/50 transition">
+                                <!-- Sparkle / Grid Glyph Icon -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+                                    <path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mt-2.5 max-w-xl">
+                            Distinctive, human-centric interfaces specifically crafted around your brand's DNA and target
+                            audience. No rigid stock templates.
+                        </p>
+                        <div class="flex items-center gap-2 mt-3.5 text-xs text-slate-300 font-medium">
+                            <span class="w-1.5 h-1.5 bg-purple-500 rounded-none inline-block"></span>
+                            <span>Pixel Perfection Guarantee</span>
+                        </div>
+                    </article>
+                    <!-- Item 02 -->
+                    <article class="sticky top-10 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] pb-8 first:pt-0 pt-8 group transition duration-200">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-baseline gap-2.5">
+                                <h3 class="text-lg font-bold text-white tracking-tight group-hover:text-purple-300 transition-colors">
+                                    High Performance Engineering
+                                </h3>
+                            </div>
+                            <div
+                                class="shrink-0 w-9 h-9 rounded-full bg-purple-950/60 border border-purple-700/30 flex items-center justify-center text-purple-300 group-hover:border-purple-500/50 transition">
+                                <!-- Lightning / Zap Icon -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mt-2.5 max-w-xl">
+                            Lightning-fast load speeds, SEO-optimized structure, and pristine code built natively for
+                            mobile responsiveness and fluid interactions.
+                        </p>
+                        <div class="flex items-center gap-2 mt-3.5 text-xs text-slate-300 font-medium">
+                            <span class="w-1.5 h-1.5 bg-purple-500 rounded-none inline-block"></span>
+                            <span>Core Web Vitals Ready</span>
+                        </div>
+                    </article>
+                    <!-- Item 03 -->
+                    <article class="sticky top-10 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] pb-8 first:pt-0 pt-8 group transition duration-200 border-t-2 border-white">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-baseline gap-2.5">
+                                <h3 class="text-lg font-bold text-white tracking-tight group-hover:text-purple-300 transition-colors">
+                                    End-to-End Product Delivery
+                                </h3>
+                            </div>
+                            <div
+                                class="shrink-0 w-9 h-9 rounded-full bg-purple-950/60 border border-purple-700/30 flex items-center justify-center text-purple-300 group-hover:border-purple-500/50 transition">
+                                <!-- Stack / Layers Icon -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+                                    <path d="m12 2 10 5-10 5L2 7l10-5Z"></path>
+                                    <path d="m2 17 10 5 10-5"></path>
+                                    <path d="m2 12 10 5 10-5"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mt-2.5 max-w-xl">
+                            Comprehensive solutions spanning strategic research, wireframing, custom development, strict
+                            QA testing, and frictionless deployment.
+                        </p>
+                        <div class="flex items-center gap-2 mt-3.5 text-xs text-slate-300 font-medium">
+                            <span class="w-1.5 h-1.5 bg-purple-500 rounded-none inline-block"></span>
+                            <span>Full Lifecycle Support</span>
+                        </div>
+                    </article>
+                    <!-- Item 04 -->
+                    <article class="sticky top-10 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] pb-8 rounded-b-2xl pt-8 group transition duration-200">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-baseline gap-2.5">
+                                <h3 class="text-lg font-bold text-white tracking-tight group-hover:text-purple-300 transition-colors">
+                                    Business &amp; ROI Driven
+                                </h3>
+                            </div>
+                            <div
+                                class="shrink-0 w-9 h-9 rounded-full bg-purple-950/60 border border-purple-700/30 flex items-center justify-center text-purple-300 group-hover:border-purple-500/50 transition">
+                                <!-- Growth Chart / Analytics Icon -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+                                    <path d="M3 3v18h18"></path>
+                                    <path d="m19 9-5 5-4-4-3 3"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mt-2.5 max-w-xl">
+                            Strategic user funnels designed to maximize conversion rates, inbound client trust, and
+                            tangible revenue growth across touchpoints.
+                        </p>
+                        <div class="flex items-center gap-2 mt-3.5 text-xs text-slate-300 font-medium">
+                            <span class="w-1.5 h-1.5 bg-purple-500 rounded-none inline-block"></span>
+                            <span>Conversion Focused Architecture</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- ==== end why choose us ==== -->
+
+        <!-- ====== section our services ====== -->
+        <section aria-labelledby="our-services-heading" class="w-full flex flex-col items-center mt-12 md:mt-32">
+            <!-- Centered Section Title -->
+            <h2 class="text-3xl md:text-5xl font-bold text-white text-center leading-tight mb-4" id="our-services-heading">
+                Services Crafted for <span>Modern<br class="hidden sm:inline" /> Growth</span>
+            </h2>
+            <!-- Centered Subtitle -->
+            <p class="text-slate-400 text-sm sm:text-base text-center max-w-xl mb-12">
+                Tailored digital expertise to accelerate your brand authority and market reach.
+            </p>
+            <!-- Services Cards Stack -->
+            <div class="w-full flex flex-col gap-4">
+                <!-- Service Card 1: Web Development -->
+                <div
+                    class="bg-gradient-to-r from-[#2E287E] to-[#181642] rounded-2xl p-2 sm:p-4 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                    <div class=" border border-2 border-white rounded-2xl p-4 flex flex-col w-full gap-6 lg:gap-0 lg:flex-row lg:items-center justify-between">
+                        <div class="flex items-start gap-4 sm:gap-5 max-w-2xl">
+                            <!-- Icon Box -->
+                            <div
+                                class="shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-purple-950/80 border border-purple-600/40 flex items-center justify-center text-purple-300 shadow-inner">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                            </div>
+                            <!-- Info Text -->
+                            <div>
+                                <h3 class="text-base sm:text-lg font-bold text-white tracking-tight mb-1.5">
+                                    Web Development
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                    Custom responsive websites, landing pages, and web apps built with modern tech stacks for
+                                    ultimate speed and security.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Feature Tag Pills -->
+                        <div class="flex flex-wrap lg:justify-end items-center gap-2 lg:max-w-md shrink-0">
+                            <div class="pill-tag px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs text-slate-200">
+                                <svg class="w-3.5 h-3.5 text-purple-400" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Landing Pages</span>
+                            </div>
+                            <div class="pill-tag px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs text-slate-200">
+                                <svg class="w-3.5 h-3.5 text-purple-400" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Company Profile</span>
+                            </div>
+                            <div class="pill-tag px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs text-slate-200">
+                                <svg class="w-3.5 h-3.5 text-purple-400" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Custom Web Apps</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                <!-- Service Card 2: UI/UX Product Design -->
+                <div
+                    class="bg-gradient-to-r from-[#2E287E] to-[#181642] rounded-2xl p-2 sm:p-4 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                    <div class=" border border-2 border-white rounded-2xl p-4 flex flex-col w-full gap-6 lg:gap-0 lg:flex-row lg:items-center justify-between">
+                    <div class="flex items-start gap-4 sm:gap-5 max-w-2xl">
+                        <!-- Icon Box -->
+                        <div
+                            class="shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-purple-950/80 border border-purple-600/40 flex items-center justify-center text-purple-300 shadow-inner">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+                                <path d="m12 19 7-7 3 3-7 7-3-3z"></path>
+                                <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                                <path d="m2 2 7.586 7.586"></path>
+                                <circle cx="11" cy="11" r="2"></circle>
+                            </svg>
+                        </div>
+                        <!-- Info Text -->
+                        <div>
+                            <h3 class="text-base sm:text-lg font-bold text-white tracking-tight mb-1.5">
+                                UI/UX Product Design
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                Intuitive interfaces and thoughtful user journeys created in Figma, complete with
+                                prototypes and scalable design systems.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Feature Tag Pills -->
+                    <div class="flex flex-wrap lg:justify-end items-center gap-2 lg:max-w-md shrink-0">
+                        <div class="pill-tag px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs text-slate-200">
+                            <svg class="w-3.5 h-3.5 text-purple-400" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Mobile &amp; Web Wireframing</span>
+                        </div>
+                        <div class="pill-tag px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs text-slate-200">
+                            <svg class="w-3.5 h-3.5 text-purple-400" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Interactive Prototypes</span>
+                        </div>
+                        <div class="pill-tag px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs text-slate-200">
+                            <svg class="w-3.5 h-3.5 text-purple-400" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Design Systems</span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <!-- Service Card 3: Graphic Design & Branding -->
+                <div
+                    class="bg-gradient-to-r from-[#2E287E] to-[#181642] rounded-2xl p-2 sm:p-4 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                     <div class=" border border-2 border-white rounded-2xl p-4 flex flex-col w-full gap-6 lg:gap-0 lg:flex-row lg:items-center justify-between">
+                    <div class="flex items-start gap-4 sm:gap-5 max-w-2xl">
+                        <!-- Icon Box -->
+                        <div
+                            class="shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-purple-950/80 border border-purple-600/40 flex items-center justify-center text-purple-300 shadow-inner">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" x2="22" y1="12" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </div>
+                        <!-- Info Text -->
+                        <div>
+                            <h3 class="text-base sm:text-lg font-bold text-white tracking-tight mb-1.5">
+                                Graphic Design &amp; Branding
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                Memorable visual identities, digital promotional posters, banner campaigns, and
+                                distinctive brand assets.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Feature Tag Pills -->
+                    <div class="flex flex-wrap lg:justify-end items-center gap-2 lg:max-w-md shrink-0">
+                        <div class="pill-tag px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs text-slate-200">
+                            <svg class="w-3.5 h-3.5 text-purple-400" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Brand Guidelines &amp; Logo</span>
+                        </div>
+                        <div class="pill-tag px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs text-slate-200">
+                            <svg class="w-3.5 h-3.5 text-purple-400" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Marketing Poster &amp; Flyer</span>
+                        </div>
+                        <div class="pill-tag px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs text-slate-200">
+                            <svg class="w-3.5 h-3.5 text-purple-400" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Social Media Kits</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- ==== end our services ==== -->
+
         <!-- ==== section our pricing ===== -->
-        <section class="relative mt-10 md:mt-4 [content-visibility:auto] [contain-intrinsic-size:auto_900px]" id="pricing" data-aos="zoom-in">
+        <section class="relative mt-10 md:mt-32 [content-visibility:auto] [contain-intrinsic-size:auto_900px]" id="pricing" data-aos="zoom-in">
             <h1 class="text-3xl md:text-5xl text-white font-bold text-center">
                 Simple Pricing for Every Business
             </h1>

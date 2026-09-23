@@ -176,7 +176,7 @@
   <!-- ======== navbar/header endddd ========== -->
 
   <!-- ====== tempat untuk isi content ======= -->
-  <div class="content px-4 md:px-16">
+  <div class="content px-6 md:px-16">
     @yield('content')
   </div>
   <!-- ======= end ======= -->
