@@ -125,6 +125,9 @@
             <a class="hover:underline whitespace-nowrap text-white px-3" href="/#projects">
               Our Works
             </a>
+            <a class="hover:underline whitespace-nowrap text-white px-3" href="/#services">
+              Services
+            </a>
             </div>
 
              <a href="/#contact" class="bg-gradient-to-r from-[#363089] to-[#1C1762] text-white py-2 px-4 rounded-3xl">Contact</a>
@@ -165,6 +168,11 @@
             <li>
                 <a class="block hover:underline" href="/#projects">
                  Our Works
+                </a>
+            </li>
+            <li>
+                <a class="block hover:underline" href="/#services">
+                    Services
                 </a>
             </li>
             <li>
