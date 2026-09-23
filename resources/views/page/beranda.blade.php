@@ -329,7 +329,7 @@
             <div class="flex md:gap-6 gap-4 flex-wrap md:flex-col lg:flex-row">
                 <!-- Grid -->
                 <div class="flex-1 gap-8">
-                    <div class="flex md:gap-6 gap-8 mb-8">
+                    <div class="flex md:gap-6 gap-4 mb-4">
                         <!-- Card website (lebar) -->
                         @if (isset($posterCards[1]))
                             <a href="{{ route('portfolio.show', $posterCards[1]) }}"
@@ -372,7 +372,7 @@
                         @endif
                     </div>
 
-                    <div class="flex md:gap-6 gap-8">
+                    <div class="flex md:gap-6 gap-4">
                         <!-- card decor -->
                         <div
                             class="lg:flex hidden rounded-2xl overflow-hidden items-center backdrop-blur hover:scale-[1.02] transition">
