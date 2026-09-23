@@ -104,11 +104,6 @@
                         class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6" id="why-choose-us-heading">
                         Why Choose Us?
                     </h1>
-                    <!-- Descriptive Subtitle -->
-                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-lg mb-6 md:mb-12">
-                        Combining strategic design, high-speed engineering, and tailored visual narratives that empower
-                        brand growth without cookie-cutter limitations.
-                    </p>
                     <!-- Divider line -->
                     <div class="w-full border-t border-slate-800/80 md:flex hidden mb-4 md:mb-10"></div>
                 </div>
@@ -227,7 +222,7 @@
             <h1 class="text-3xl md:text-5xl text-white font-bold text-center">
                 Simple Pricing for Every Business
             </h1>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-6 md:py-10">
                 <!-- card -->
                 <div class="bg-gradient-to-r from-[#2E287E] to-[#181642] p-2 rounded-[30px] flex gap-4 items-center">
                     <div class="border-2 border-white rounded-[30px] p-4 flex flex-col gap-10 w-full h-full">
@@ -331,7 +326,7 @@
                 $bannerCard = $ports->firstWhere('category', 'banner');
             @endphp
 
-            <div class="flex md:gap-6 gap-8 flex-wrap md:flex-col lg:flex-row">
+            <div class="flex md:gap-6 gap-4 flex-wrap md:flex-col lg:flex-row">
                 <!-- Grid -->
                 <div class="flex-1 gap-8">
                     <div class="flex md:gap-6 gap-8 mb-8">
