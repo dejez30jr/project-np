@@ -98,12 +98,11 @@
         <section aria-labelledby="why-choose-us-heading" id="services" class="mt-20 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16 items-start">
                 <!-- Left Column: Title, Narrative & Statistics -->
-                <div class="sticky top-36 lg:col-span-6 flex flex-col items-start pr-0 lg:pr-6">
+                <div class="md:sticky md:top-36 lg:col-span-6 flex flex-col items-start pr-0 lg:pr-6">
                     <!-- Main Bold Headline -->
                     <h1
                         class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6" id="why-choose-us-heading">
-                        Engineered for<br />digital<br />
-                        <span>supremacy.</span>
+                        Why Choose Us?
                     </h1>
                     <!-- Descriptive Subtitle -->
                     <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-lg mb-6 md:mb-12">
@@ -116,7 +115,7 @@
                 <!-- Right Column: Numbered Value Propositions -->
                 <div class="lg:col-span-6 sticky top-50 flex flex-col divide-y bg-gradient-to-r from-[#2E287E] to-[#181642] rounded-2xl border border-white">
                     <!-- Item 01 -->
-                    <article class="sticky top-10 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] pb-8 first:rounded-t-2xl pt-8 group transition duration-200">
+                    <article class="sticky top-16 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] border-t-2 border-white pb-8 first:rounded-t-2xl pt-8 group transition duration-200">
                         <div class="flex items-start justify-between gap-4">
                             <div class="flex items-baseline gap-2.5">
                                 <h3 class="text-lg font-bold text-white tracking-tight group-hover:text-purple-300 transition-colors">
@@ -141,7 +140,7 @@
                         </div>
                     </article>
                     <!-- Item 02 -->
-                    <article class="sticky top-10 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] pb-8 first:pt-0 pt-8 group transition duration-200">
+                    <article class="sticky top-16 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] border-t-2 border-white pb-8 first:pt-0 pt-8 group transition duration-200">
                         <div class="flex items-start justify-between gap-4">
                             <div class="flex items-baseline gap-2.5">
                                 <h3 class="text-lg font-bold text-white tracking-tight group-hover:text-purple-300 transition-colors">
@@ -166,7 +165,7 @@
                         </div>
                     </article>
                     <!-- Item 03 -->
-                    <article class="sticky top-10 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] pb-8 first:pt-0 pt-8 group transition duration-200 border-t-2 border-white">
+                    <article class="sticky top-16 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] border-t-2 border-white pb-8 first:pt-0 pt-8 group transition duration-200 border-t-2 border-white">
                         <div class="flex items-start justify-between gap-4">
                             <div class="flex items-baseline gap-2.5">
                                 <h3 class="text-lg font-bold text-white tracking-tight group-hover:text-purple-300 transition-colors">
@@ -193,7 +192,7 @@
                         </div>
                     </article>
                     <!-- Item 04 -->
-                    <article class="sticky top-10 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] pb-8 rounded-b-2xl pt-8 group transition duration-200">
+                    <article class="sticky top-16 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] border-t-2 border-white pb-8 rounded-b-2xl pt-8 group transition duration-200">
                         <div class="flex items-start justify-between gap-4">
                             <div class="flex items-baseline gap-2.5">
                                 <h3 class="text-lg font-bold text-white tracking-tight group-hover:text-purple-300 transition-colors">
