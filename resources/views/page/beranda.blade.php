@@ -165,7 +165,7 @@
                         </div>
                     </article>
                     <!-- Item 03 -->
-                    <article class="sticky top-16 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] border-t-2 border-white pb-8 first:pt-0 pt-8 group transition duration-200 border-t-2 border-white">
+                    <article class="sticky top-16 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] border-t-2 border-white pb-8 first:pt-0 pt-8 group transition duration-200">
                         <div class="flex items-start justify-between gap-4">
                             <div class="flex items-baseline gap-2.5">
                                 <h3 class="text-lg font-bold text-white tracking-tight group-hover:text-purple-300 transition-colors">
