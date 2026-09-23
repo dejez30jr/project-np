@@ -8,8 +8,9 @@
   <meta name="description" content="Neuron Production — jasa desain poster, banner, dan pembuatan website profesional.">
   <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <link href="/src/style.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/aos.css') }}" />
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="shortcut icon" href="{{ asset('images/app-layout/navlogo-64.png') }}" type="image/png"/>
@@ -125,9 +126,6 @@
             <a class="hover:underline whitespace-nowrap text-white px-3" href="/#projects">
               Our Works
             </a>
-            <a class="hover:underline whitespace-nowrap text-white px-3" href="/#services">
-              Services
-            </a>
             </div>
 
              <a href="/#contact" class="bg-gradient-to-r from-[#363089] to-[#1C1762] text-white py-2 px-4 rounded-3xl">Contact</a>
@@ -135,7 +133,7 @@
         </div>
     </header>
     <!-- Mobile menu -->
-    <div aria-hidden="true" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden" id="mobile-menu">
+    <div aria-hidden="true" class="fixed inset-0 bg-black/50 z-40 hidden" id="mobile-menu">
     </div>
     <nav aria-label="Mobile Navigation"
         class="fixed top-0 left-0 bottom-0 w-64 backdrop-blur-md z-50 transform -translate-x-full transition-transform duration-300 ease-in-out"
@@ -168,11 +166,6 @@
             <li>
                 <a class="block hover:underline" href="/#projects">
                  Our Works
-                </a>
-            </li>
-            <li>
-                <a class="block hover:underline" href="/#services">
-                    Services
                 </a>
             </li>
             <li>
