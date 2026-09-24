@@ -39,10 +39,10 @@
         }
     </style>
 
-    <section class="py-10 md:py-20 md:mt-2 min-h-[80vh]">
+    <section class="py-10 md:py-20 min-h-[80vh]">
         <div class="max-w-3xl mx-auto">
             {{-- Header halaman --}}
-            <div class="text-center mb-10" data-aos="fade-up">
+            <div class="text-center md:mt-6 mb-10" data-aos="fade-up">
                 <h1 class="text-3xl md:text-5xl font-bold text-white leading-tight">
                     Client Registration
                 </h1>
