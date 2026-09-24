@@ -39,7 +39,7 @@
         }
     </style>
 
-    <section class="py-10 md:py-16 min-h-[80vh]">
+    <section class="py-10 md:py-20 md:mt-2 min-h-[80vh]">
         <div class="max-w-3xl mx-auto">
             {{-- Header halaman --}}
             <div class="text-center mb-10" data-aos="fade-up">
