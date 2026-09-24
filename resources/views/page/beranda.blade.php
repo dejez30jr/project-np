@@ -206,11 +206,11 @@
         <!-- ==== end services ==== -->
 
         <!-- ==== section our pricing ===== -->
-        <section class="relative mt-12 md:mt-20 [content-visibility:auto] [contain-intrinsic-size:auto_900px]" id="pricing" data-aos="zoom-in">
+        <section class="relative mt-12 md:mt-12 [content-visibility:auto] [contain-intrinsic-size:auto_900px]" id="pricing" data-aos="zoom-in">
             <h1 class="text-3xl md:text-5xl text-white font-bold text-center">
                 Simple Pricing for Every Business
             </h1>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-6 md:py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-6 md:py-13">
                 <!-- card -->
                 <div class="bg-gradient-to-r from-[#2E287E] to-[#181642] p-2 rounded-[30px] flex gap-4 items-center">
                     <div class="border-2 border-white rounded-[30px] p-4 flex flex-col gap-10 w-full h-full">
