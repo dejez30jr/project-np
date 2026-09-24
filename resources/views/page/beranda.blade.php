@@ -1,4 +1,4 @@
-﻿<!-- inline css -->
+﻿﻿<!-- inline css -->
 <style>
     #hero-image {
         animation: float 3s ease-in-out infinite;
@@ -95,21 +95,16 @@
         </section>
 
         <!-- ====== section services (mengambil alih konten why choose us) ====== -->
-        <section aria-labelledby="why-choose-us-heading" id="services" class="mt-20 w-full">
+        <!--<section aria-labelledby="why-choose-us-heading" id="services" class="mt-20 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16 items-start">
-                <!-- Left Column: Title, Narrative & Statistics -->
                 <div class="md:sticky md:top-36 lg:col-span-6 flex flex-col items-start pr-0 lg:pr-6">
-                    <!-- Main Bold Headline -->
                     <h1
                         class="text-3xl md:text-5xl font-bold text-white leading-tight mb-4" id="why-choose-us-heading">
                         Why Choose Us?
                     </h1>
-                    <!-- Divider line -->
                     <div class="w-full border-t border-slate-800/80 md:flex hidden mb-4 md:mb-10"></div>
                 </div>
-                <!-- Right Column: Numbered Value Propositions -->
                 <div class="lg:col-span-6 sticky top-50 flex flex-col divide-y bg-gradient-to-r from-[#2E287E] to-[#181642] rounded-2xl border border-white">
-                    <!-- Item 01 -->
                     <article class="sticky top-16 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] pb-8 first:rounded-t-2xl pt-8 group transition duration-200">
                         <div class="flex items-start justify-between gap-4">
                             <div class="flex items-baseline gap-2.5">
@@ -119,7 +114,6 @@
                             </div>
                             <div
                                 class="shrink-0 w-9 h-9 rounded-full bg-purple-950/60 border border-purple-700/30 flex items-center justify-center text-purple-300 group-hover:border-purple-500/50 transition">
-                                <!-- Sparkle / Grid Glyph Icon -->
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
                                     <path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1"></path>
                                 </svg>
@@ -134,7 +128,6 @@
                             <span>Pixel Perfection Guarantee</span>
                         </div>
                     </article>
-                    <!-- Item 02 -->
                     <article class="sticky top-16 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] pb-8 first:pt-0 pt-8 group transition duration-200">
                         <div class="flex items-start justify-between gap-4">
                             <div class="flex items-baseline gap-2.5">
@@ -144,7 +137,6 @@
                             </div>
                             <div
                                 class="shrink-0 w-9 h-9 rounded-full bg-purple-950/60 border border-purple-700/30 flex items-center justify-center text-purple-300 group-hover:border-purple-500/50 transition">
-                                <!-- Lightning / Zap Icon -->
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
                                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                                 </svg>
@@ -159,7 +151,6 @@
                             <span>Core Web Vitals Ready</span>
                         </div>
                     </article>
-                    <!-- Item 03 -->
                     <article class="sticky top-16 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] pb-8 first:pt-0 pt-8 group transition duration-200">
                         <div class="flex items-start justify-between gap-4">
                             <div class="flex items-baseline gap-2.5">
@@ -169,7 +160,6 @@
                             </div>
                             <div
                                 class="shrink-0 w-9 h-9 rounded-full bg-purple-950/60 border border-purple-700/30 flex items-center justify-center text-purple-300 group-hover:border-purple-500/50 transition">
-                                <!-- Stack / Layers Icon -->
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
                                     <path d="m12 2 10 5-10 5L2 7l10-5Z"></path>
                                     <path d="m2 17 10 5 10-5"></path>
@@ -186,7 +176,6 @@
                             <span>Full Lifecycle Support</span>
                         </div>
                     </article>
-                    <!-- Item 04 -->
                     <article class="sticky top-16 md:top-36 p-6 bg-gradient-to-r from-[#2E287E] to-[#181642] pb-8 rounded-b-2xl pt-8 group transition duration-200">
                         <div class="flex items-start justify-between gap-4">
                             <div class="flex items-baseline gap-2.5">
@@ -196,7 +185,6 @@
                             </div>
                             <div
                                 class="shrink-0 w-9 h-9 rounded-full bg-purple-950/60 border border-purple-700/30 flex items-center justify-center text-purple-300 group-hover:border-purple-500/50 transition">
-                                <!-- Growth Chart / Analytics Icon -->
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
                                     <path d="M3 3v18h18"></path>
                                     <path d="m19 9-5 5-4-4-3 3"></path>
@@ -214,15 +202,15 @@
                     </article>
                 </div>
             </div>
-        </section>
+        </section>-->
         <!-- ==== end services ==== -->
 
         <!-- ==== section our pricing ===== -->
-        <section class="relative mt-12 md:mt-32 [content-visibility:auto] [contain-intrinsic-size:auto_900px]" id="pricing" data-aos="zoom-in">
+        <section class="relative mt-12 md:mt-20 [content-visibility:auto] [contain-intrinsic-size:auto_900px]" id="pricing" data-aos="zoom-in">
             <h1 class="text-3xl md:text-5xl text-white font-bold text-center">
                 Simple Pricing for Every Business
             </h1>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-6 md:py-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-6 md:py-12">
                 <!-- card -->
                 <div class="bg-gradient-to-r from-[#2E287E] to-[#181642] p-2 rounded-[30px] flex gap-4 items-center">
                     <div class="border-2 border-white rounded-[30px] p-4 flex flex-col gap-10 w-full h-full">
@@ -430,7 +418,7 @@
         <section class="grid md:grid-cols-2 py-8 md:py-20 gap-10 [content-visibility:auto] [contain-intrinsic-size:auto_1000px]" id="contact" data-aos="zoom-in">
             <div class="text-white flex flex-col gap-4 md:gap-8">
                 <h1>Contact Us</h1>
-                <h2 class="md:text-5xl text-3xl font-bold mb-0 md:mb-15">Let’s discuss your project and bring your ideas to
+                <h2 class="md:text-5xl text-3xl font-bold mb-0 md:mb-10">Let’s discuss your project and bring your ideas to
                     life</h2>
                 <button type="submit" form="form-kontak"
                     class="w-[fit-content] hidden md:flex rounded-tr-3xl rounded-bl-3xl text-end p-2 px-16 bg-gradient-to-r from-[#363089] to-[#1C1762] hover:brightness-110 transition cursor-pointer">
